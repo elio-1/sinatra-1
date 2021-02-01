@@ -1,12 +1,12 @@
 require 'gossip'
 class ApplicationController < Sinatra::Base
-  get '/' do
+  get '/' do                                  # index page, params value to the html
    erb :index, locals: {gossips: Gossip.all}
   end
   get '/gossips/new/' do
     erb :new_gossip
   end
-  post '/gossips/new/' do
+  post '/gossips/new/' do              # gossips page, params value to the html for addin content to the csv file      
    Gossip.new(params["gossip_author"], params["gossip_content"]).save
    redirect '/'
   end

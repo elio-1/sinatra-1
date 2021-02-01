@@ -5,13 +5,13 @@ attr_reader :author, :content
     @author, @content = author, content
   end
   
-  def save
-    CSV.open("./db/gossip.csv", 'a+') do |csv|
+  def save                                      #Save a post
+    CSV.open("./db/gossip.csv", 'ab') do |csv|
       csv << [@author, @content]
     end
   end
   
-  def self.all
+  def self.all                                  # add all line of the csv file into and array
       all_gossips = []
       
     CSV.read("./db/gossip.csv").each do |csv_line|
@@ -20,7 +20,7 @@ attr_reader :author, :content
     return all_gossips
   end
   
-  def self.find(id)
+  def self.find(id)                             # add a single line into an array using index
     selected_gossips = []
     CSV.read("./db/gossip.csv").each_with_index do |csv_line, index| 
       if (id == index+1)
@@ -30,8 +30,10 @@ attr_reader :author, :content
     return selected_gossips
   end
   
+  
   def self.update(id)
-    self.find(id)
-    selected_gossips.save
+    gossips_to_update = self.find(id)
+    gossips_to_update.delete
+    self.save
   end
 end
