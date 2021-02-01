@@ -29,4 +29,9 @@ attr_reader :author, :content
     end 
     return selected_gossips
   end
+  
+  def self.update 
+    self.find
+    self.save
+  end
 end

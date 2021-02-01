@@ -4,7 +4,7 @@
   </head>
   <body>
     <h1>Mon super site de gossip, depuis le dossier views, avec la gem shotgun yay !</h1>
-    <a href="/gossips/new/">créer un gossip</a>
+    <a href="/gossips/new/">crée un gossip</a>
     <h2>Les derniers gossips</h2>
     <% gossips.each do |gossip| %>
         <p>
@@ -12,10 +12,6 @@
           <ul> Content : <%= gossip.content %></ul>
         </p>
       <% end %>
-      <h2>Voir un potin</h2>
-      <form action='/gossips/:id' method='POST'>
-      Nom de l'auteur :  <input type='text' name='gossip_author'/><br/>
-      <input type='submit'/>
     </form>
   </body>
 </html>
