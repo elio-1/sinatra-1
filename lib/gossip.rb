@@ -30,8 +30,8 @@ attr_reader :author, :content
     return selected_gossips
   end
   
-  def self.update 
-    self.find
-    self.save
+  def self.update(id)
+    self.find(id)
+    selected_gossips.save
   end
 end
