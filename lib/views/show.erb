@@ -5,13 +5,11 @@
   <body>
     <h1>Gossip Info</h1>
     
-    <% gossips.each do |gossip| %>
       <p>
-      Voici la page du potin n°<%=id%><br/>
-      L'auteur du potin : <%=gossip.author%><br/>
-      Le contenu du potin : <%=gossip.content%>
+      Voici la page du potin n°<%=params['id']%><br/>
+      L'auteur du potin : <%=id.author%><br/>
+      Le contenu du potin : <%=id.content%>
       </p>
-    <%end%>
     <a href="/gossips/<%=id%>/edit/">Éditer ce gossip</a><br/>
     <a href='/'>Lien pour revenir à la page des potins</a>
   </body>
