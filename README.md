@@ -1,4 +1,4 @@
-## Project : [project_name?] :rocket:
+## Project : The Gossip Project :rocket:
 
 
 ### Installation
